@@ -1,12 +1,19 @@
 import React, { useContext } from 'react'
 import { DashboardContext } from '../../utils'
+import HeaderMenu from '../ui/HeaderMenu'
 import { TbWorld } from 'react-icons/tb'
 export default function Header() {
   const { searchType, setSearchType } = useContext(DashboardContext)
   const dashboardSearchTypes = ['stays', 'experiences', 'online experiences']
   return (
     <div className="flex items-center justify-between px-16 py-[32px]">
-      <div className="">Logo</div>
+      <div className="h-[41px] w-[121px]">
+        <img
+          className="size-full"
+          src="/AirbnbLogo-removebg-preview.png"
+          alt=""
+        />
+      </div>
       <div className="flex items-center gap-[34px] text-base font-normal text-[#717171]">
         {dashboardSearchTypes.map((type) => (
           <span
@@ -28,7 +35,7 @@ export default function Header() {
           {' '}
           <TbWorld />
         </span>
-        <button>Dropdown</button>
+        <HeaderMenu />
       </div>
     </div>
   )

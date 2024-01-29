@@ -34,6 +34,7 @@ import { createRoot } from 'react-dom/client'
 import React, { StrictMode } from 'react'
 import { RouterProvider } from 'react-router-dom'
 import 'tailwindcss/tailwind.css'
+import './assets/styles.scss'
 import router from './routes'
 // import { createAppState } from './utils'
 
