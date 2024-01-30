@@ -7,7 +7,7 @@ export default function Header() {
   const { searchType, setSearchType } = useContext(DashboardContext)
   const dashboardSearchTypes = ['stays', 'experiences', 'online experiences']
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col border-b border-gray-200">
       <div className="flex items-center justify-between px-16 py-[16px]">
         <div className="h-[41px] w-[121px]">
           <img
@@ -35,7 +35,7 @@ export default function Header() {
 
         <div className="flex items-center gap-[24px]">
           <span className="text-[#222222]">Airbnb your home</span>
-          <span>
+          <span className="text-[18px]">
             {' '}
             <TbWorld />
           </span>

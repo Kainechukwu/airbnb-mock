@@ -6,7 +6,7 @@ import FilterSlider from './FilterSlider'
 
 export default function Filter() {
   return (
-    <div className="">
+    <div className="mx-16">
       <div className=" flex items-center justify-between">
         <div className="mr-6 flex flex-1 overflow-x-auto">
           {/* <FilterLinks /> */}

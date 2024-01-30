@@ -5,6 +5,14 @@ export function closeButton(setIsOpen) {
 }
 export default function SearchButtonOption({ item, children }) {
   const [isOpen, setIsOpen] = useState(false)
+  const setPosition = (itemName) => {
+    let position = 'bottom-[-45px]'
+    if (itemName.toLowerCase().includes('where')) {
+      position = 'bottom-[-470px]'
+    }
+
+    return position
+  }
 
   return (
     <OutsideClickHandler onOutsideClick={() => closeButton(setIsOpen)}>
@@ -31,12 +39,20 @@ export default function SearchButtonOption({ item, children }) {
                   item.title.toLowerCase().includes('check') ? 'mr-6' : 'mr-12'
                 }  flex flex-col`}
               >
-                <span className="text-xs text-[#222222]"> {item.title}</span>
+                <span className="mb-1 text-xs text-[#222222]">
+                  {' '}
+                  {item.title}
+                </span>
                 <span className="text-xs text-[#727272]"> {item.desc}</span>
               </div>
             </div>
+
             {isOpen && (
-              <div className="absolute bottom-[-45px] left-0 z-10  rounded-lg bg-white pt-[10px]  shadow-[0px_1px_20px_0px_rgba(0,0,0,0.15)]">
+              <div
+                className={`${setPosition(
+                  item.title
+                )} absolute left-0 z-10  rounded-[40px] bg-white pt-[10px]  shadow-[0px_1px_20px_0px_rgba(0,0,0,0.15)]`}
+              >
                 {children}
               </div>
             )}
