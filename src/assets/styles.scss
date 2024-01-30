@@ -2,6 +2,17 @@
   min-height: calc(100vh - 200px);
 }
 
+.filterSwiper{
+  height: 100px !important;
+  width: 100%;
+  // padding-left: 0%;
+}
+
+.filterSwiperSlide{
+  max-width: max-content !important;
+  padding: 0 16px
+}
+
 .swiper {
   height: 280px;
   border-radius: 14px;
