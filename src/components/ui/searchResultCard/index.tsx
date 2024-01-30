@@ -1,12 +1,14 @@
 import React from 'react'
 import { IoMdStar } from 'react-icons/io'
-import CarouselSlide from './Carousel'
+// import CarouselSlide from './Carousel'
+import SwiperSlider from './SwiperSlider'
 export default function ResultCard() {
   return (
     <div>
       <div className="flex flex-col">
         <div>
-          <CarouselSlide />
+          {/* <CarouselSlide /> */}
+          <SwiperSlider />
         </div>
         <div className="flex justify-between gap-4">
           <div className="flex flex-col">
