@@ -1,31 +1,34 @@
 import React from 'react'
 import { IoMdStar } from 'react-icons/io'
-// import CarouselSlide from './Carousel'
 import SwiperSlider from './SwiperSlider'
-export default function ResultCard() {
+export default function ResultCard({ result }) {
   return (
     <div>
       <div className="flex flex-col">
-        <div>
-          {/* <CarouselSlide /> */}
-          <SwiperSlider />
+        <div className="mb-4">
+          <SwiperSlider imageUrls={result?.images} />
         </div>
         <div className="flex justify-between gap-4">
           <div className="flex flex-col">
             <span className="text-base font-semibold text-[#222222]">
-              Rethimo, Greece
+              {result.location}
             </span>
-            <span className="text-base text-[#717171]">3,000 km away</span>
-            <span className="text-base text-[#717171]">April 14-19</span>
+            <span className="text-base text-[#717171]">{result.distance}</span>
+            <span className="text-base text-[#717171]">{result.date}</span>
             <span className="text-base font-semibold text-[#222222]">
-              $105 <span className="font-normal">night</span>
+              {result.amount}{' '}
+              <span className="font-normal">{result.tenor}</span>
             </span>
           </div>
           <div className="flex h-full items-start">
-            <div className="flex items-center gap-1">
-              <IoMdStar />
-              <span className="text-base  text-[#222222]">5.0</span>
-            </div>
+            {result.rating && (
+              <div className="flex items-center gap-1">
+                <IoMdStar />
+                <span className="text-base  text-[#222222]">
+                  {result.rating}
+                </span>
+              </div>
+            )}
           </div>
         </div>
       </div>
