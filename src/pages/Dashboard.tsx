@@ -16,7 +16,7 @@ export default function Dashboard() {
   return (
     <DashboardContext.Provider value={DashboardContextValue}>
       <div className="size-full">
-        <div className="border-b border-gray-200">
+        <div className="sticky top-0  z-[1000000] bg-white border-b border-gray-200">
           <Header />
         </div>
         <SearchResultsPage />

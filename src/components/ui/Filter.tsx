@@ -5,9 +5,11 @@ import Switch from './Switch'
 
 export default function Filter() {
   return (
-    <div>
-      <div className="flex items-center justify-between">
-        <FilterLinks />
+    <div className="">
+      <div className=" flex items-center justify-between">
+        <div className="mr-6 flex flex-1 overflow-x-auto">
+          <FilterLinks />
+        </div>
 
         <div className="flex gap-4">
           <div className="flex cursor-pointer items-center gap-2 rounded-[12px] border border-[#E1E1E1] p-4 text-xs font-semibold text-[#292929]">

@@ -1,10 +1,13 @@
 import React from 'react'
 import { IoMdStar } from 'react-icons/io'
+import CarouselSlide from './Carousel'
 export default function ResultCard() {
   return (
     <div>
       <div className="flex flex-col">
-        <div>carousel</div>
+        <div>
+          <CarouselSlide />
+        </div>
         <div className="flex justify-between gap-4">
           <div className="flex flex-col">
             <span className="text-base font-semibold text-[#222222]">

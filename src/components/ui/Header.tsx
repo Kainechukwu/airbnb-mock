@@ -6,7 +6,7 @@ export default function Header() {
   const { searchType, setSearchType } = useContext(DashboardContext)
   const dashboardSearchTypes = ['stays', 'experiences', 'online experiences']
   return (
-    <div className="flex items-center justify-between px-16 py-[32px]">
+    <div className="flex items-center justify-between px-16 py-[16px]">
       <div className="h-[41px] w-[121px]">
         <img
           className="size-full"

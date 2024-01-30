@@ -9,7 +9,7 @@ export default function BottomLinks() {
 
   return (
     <div className="flex items-center justify-between px-16 py-[28px]">
-      <div className="flex text-sm font-normal">
+      <div className="flex items-center  text-sm font-normal">
         <span className="">© 2024 Airbnb, Inc.</span>
         {bottomLinks.map((link) => (
           <div key={link} className="flex items-center ">
@@ -17,6 +17,13 @@ export default function BottomLinks() {
             <span>{link}</span>
           </div>
         ))}
+        <div className="">
+          <img
+            src="/bluemarkpill.png"
+            alt="pill"
+            className="w-[26px ml-2 h-[14px]"
+          />
+        </div>
       </div>
 
       <div className="flex items-center text-sm font-semibold text-[#222222]">

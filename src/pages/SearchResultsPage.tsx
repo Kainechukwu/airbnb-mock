@@ -6,7 +6,7 @@ export default function SearchResults() {
     // eslint-disable-next-line tailwindcss/no-custom-classname
     <div className={`bodyHeight  px-16`}>
       <Filter />
-      <div className="grid grid-cols-4 gap-4">
+      <div className="mt-6 grid grid-cols-4 gap-4">
         <SearchResultCard />
       </div>
     </div>

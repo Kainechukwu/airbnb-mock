@@ -12,6 +12,60 @@ export default function FooterNav() {
     'Things to do',
     'Airbnb-friendly apartments'
   ]
+
+  const footerResults = [
+    {
+      title: 'Canmore',
+      desc: 'Apartment rentals'
+    },
+
+    {
+      title: 'Benlamadena',
+      desc: 'Beach house rentals'
+    },
+    {
+      title: 'Marbella',
+      desc: 'Cottage rentals'
+    },
+    {
+      title: 'Mijas',
+      desc: 'Apartment rentals'
+    },
+    {
+      title: 'Pressccot',
+      desc: 'Apartment rentals'
+    },
+
+    {
+      title: 'Sonoma',
+      desc: 'Beach house rentals'
+    },
+    {
+      title: 'Joutenheim',
+      desc: 'Pet-friendly rentals'
+    },
+    {
+      title: 'Santa Barbara',
+      desc: 'Apartment rentals'
+    },
+    {
+      title: 'Monterey',
+      desc: 'Apartment rentals'
+    },
+
+    {
+      title: 'Anaheim',
+      desc: 'Beach house rentals'
+    },
+    {
+      title: 'Helheim',
+      desc: 'Cottage rentals'
+    },
+    {
+      title: 'Mijas',
+      desc: 'Apartment rentals'
+    }
+  ]
   const [selected, setSelected] = useState('Popular')
   return (
     <div className="mt-2">
@@ -31,8 +85,10 @@ export default function FooterNav() {
         ))}
       </div>
 
-      <div className="grid grid-cols-4 gap-4 pt-[36px]">
-        <FooterNavResults />
+      <div className="grid grid-cols-6 gap-4 pt-[36px]">
+        {footerResults.map((res) => (
+          <FooterNavResults key={res.title} title={res.title} desc={res.desc} />
+        ))}
       </div>
     </div>
   )
