@@ -64,7 +64,7 @@ export default function SearchButtonOption({ item, children }) {
               key={item.title}
               // eslint-disable-next-line tailwindcss/no-custom-classname
               className={`${
-                isOpen ? 'searchBoxShadow bg-white' : ''
+                isOpen ? 'searchBoxShadow bg-white hover:bg-white' : ''
               }  relative flex cursor-pointer items-center rounded-[40px] p-4 pl-8 hover:bg-[#EBEBEB]`}
             >
               <div
@@ -76,9 +76,11 @@ export default function SearchButtonOption({ item, children }) {
                   {' '}
                   {item.title}
                 </span>
-                {item.title.toLowerCase() !== 'who' && (
-                  <span className="text-xs text-[#727272]"> {item.desc}</span>
-                )}
+
+                {item.title.toLowerCase() !== 'who' &&
+                  item.title.toLowerCase() !== 'where' && (
+                    <span className="text-xs text-[#727272]"> {item.desc}</span>
+                  )}
                 {item.title.toLowerCase() == 'who' && (
                   <div className="flex items-center gap-4">
                     <span
@@ -98,6 +100,27 @@ export default function SearchButtonOption({ item, children }) {
                           <FaTimes />
                         </span>
                       )}
+                  </div>
+                )}
+                {item.title.toLowerCase() == 'where' && (
+                  <div className="flex items-center gap-4">
+                    <span className={`text-xs text-[#727272]`}>
+                      <input
+                        placeholder={'Search destination'}
+                        className={`${
+                          isOpen ? '' : ''
+                        } w-full bg-transparent outline-none ring-0 focus:outline-none focus:ring-0`}
+                        type="text"
+                      />
+                    </span>
+                    {/* {true && isOpen && (
+                      <span
+                        className="absolute inset-y-0  right-[-30px] flex cursor-pointer items-center text-sm"
+                        onClick={() => Refresh()}
+                      >
+                        <FaTimes />
+                      </span>
+                    )} */}
                   </div>
                 )}
               </div>
