@@ -8,7 +8,7 @@ import { CommunityContent } from '../ui'
 
 export default function Header() {
   const { searchType, setSearchType } = useContext(DashboardContext)
-  const [modalOpen, setModalOpen] = useState(true)
+  const [modalOpen, setModalOpen] = useState(false)
   const dashboardSearchTypes = ['stays', 'experiences', 'online experiences']
   return (
     <div className="flex flex-col border-b border-gray-200">

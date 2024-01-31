@@ -8,12 +8,15 @@ import { Filter } from '../components/ui'
 import { ShowMore } from '../components/ui'
 export default function Dashboard() {
   const [searchType, setSearchType] = useState('stays')
+  const [who, setWho] = useState({ adult: 0, children: 0, infant: 0, pet: 0 })
   const DashboardContextValue = useMemo(
     () => ({
       searchType,
-      setSearchType
+      setSearchType,
+      who,
+      setWho
     }),
-    [searchType, setSearchType]
+    [searchType, setSearchType, who, setWho]
   )
   //
   return (

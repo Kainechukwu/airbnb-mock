@@ -1,9 +1,36 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import OutsideClickHandler from 'react-outside-click-handler'
+import { DashboardContext } from '../../../utils'
+import { FaTimes } from 'react-icons/fa'
 export function closeButton(setIsOpen) {
   setIsOpen(false)
 }
 export default function SearchButtonOption({ item, children }) {
+  const { setWho, who } = useContext(DashboardContext)
+
+  const handleWho = () => {
+    const guests = who.adult + who.children
+    const infants = who.infant
+    const pets = who.pet
+    let text = ''
+    if (guests > 0) {
+      text = `guests ${guests}${infants > 0 || pets > 0 ? ', ' : ''}`
+    }
+
+    if (infants > 0) {
+      text = text + `infants ${infants}${pets > 0 ? ', ' : ''}`
+    }
+
+    if (pets > 0) {
+      text = text + `pets ${pets}`
+    }
+    return text
+  }
+
+  const Refresh = () => {
+    setWho({ adult: 0, children: 0, infant: 0, pet: 0 })
+  }
+
   const [isOpen, setIsOpen] = useState(false)
   const setPosition = (itemName) => {
     let position = 'bottom-[-45px] left-0'
@@ -12,6 +39,9 @@ export default function SearchButtonOption({ item, children }) {
     }
     if (itemName.toLowerCase().includes('who')) {
       position = 'bottom-[-402px] right-0'
+    }
+    if (itemName.toLowerCase().includes('check')) {
+      position = 'bottom-[-518px] right-[-271px]'
     }
 
     return position
@@ -40,13 +70,31 @@ export default function SearchButtonOption({ item, children }) {
               <div
                 className={` ${
                   item.title.toLowerCase().includes('check') ? 'mr-6' : 'mr-12'
-                }  flex flex-col`}
+                }  relative flex flex-col`}
               >
                 <span className="mb-1 text-xs text-[#222222]">
                   {' '}
                   {item.title}
                 </span>
-                <span className="text-xs text-[#727272]"> {item.desc}</span>
+                {item.title.toLowerCase() !== 'who' && (
+                  <span className="text-xs text-[#727272]"> {item.desc}</span>
+                )}
+                {item.title.toLowerCase() == 'who' && (
+                  <div className="flex items-center gap-4">
+                    <span className=" max-w-20 truncate text-xs text-[#727272]">
+                      {' '}
+                      {handleWho().length > 0 ? handleWho() : item.desc}
+                    </span>
+                    {who.adult + who.pet + who.children + who.infant > 0 && (
+                      <span
+                        className="absolute inset-y-0  right-[-30px] flex cursor-pointer items-center text-sm"
+                        onClick={() => Refresh()}
+                      >
+                        <FaTimes />
+                      </span>
+                    )}
+                  </div>
+                )}
               </div>
             </div>
 

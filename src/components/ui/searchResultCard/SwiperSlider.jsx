@@ -24,11 +24,11 @@ export default function SwiperSlider({ imageUrls }) {
       slidesPerView={1}
       navigation
       pagination={{ clickable: true }}
-      onSwiper={(swiper) => console.log(swiper)}
-      onSlideChange={() => console.log('slide change')}
+      onSwiper={() => {}}
+      onSlideChange={() => {}}
     >
-      {imageUrls?.map((url) => (
-        <SwiperSlide className="swiperSlide" key={url}>
+      {imageUrls?.map((url, index) => (
+        <SwiperSlide className="swiperSlide" key={url + String(index)}>
           <img src={url} alt="image" />
         </SwiperSlide>
       ))}

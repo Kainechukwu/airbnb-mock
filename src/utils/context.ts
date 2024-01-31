@@ -11,12 +11,16 @@ interface IDashboardContext {
   contextName?: string
   searchType: string | null
   setSearchType: (e) => void
+  who: any | null
+  setWho: (e) => void
 }
 
 const defaultContext = createContext<IDashboardContext>({
   contextName: 'Dashboard',
   searchType: null,
-  setSearchType: () => {}
+  setSearchType: () => {},
+  who: {},
+  setWho: () => {}
 })
 
 export const DashboardContext = defaultContext

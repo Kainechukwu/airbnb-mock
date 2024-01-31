@@ -33,22 +33,6 @@ export default function SearchComponent() {
           <HiOutlineSearch />
         </div>
         {searchFilters?.map((item) => (
-          // <div
-          //   key={item.title}
-          //   className={` ${
-          //     !item.title.toLowerCase().includes('check') ? 'flex-1' : ''
-          //   } relative flex cursor-pointer items-center rounded-[40px] p-4 pl-8 hover:bg-[#EBEBEB]`}
-          // >
-          //   <div className={`absolute left-0 h-8 w-[1px] bg-gray-200`}></div>
-          //   <div
-          //     className={` ${
-          //       item.title.toLowerCase().includes('check') ? 'mr-6' : 'mr-12'
-          //     }  flex flex-col`}
-          //   >
-          //     <span className="text-xs text-[#222222]"> {item.title}</span>
-          //     <span className="text-xs text-[#727272]"> {item.desc}</span>
-          //   </div>
-          // </div>
           <SearchButtonOption key={item.title} item={item}>
             <div>{item.title.toLowerCase().includes('where') && <Where />}</div>
             <div>{item.title.toLowerCase().includes('check') && <Check />}</div>

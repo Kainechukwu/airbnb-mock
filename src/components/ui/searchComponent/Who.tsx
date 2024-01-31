@@ -5,19 +5,23 @@ export default function Who() {
   const options = [
     {
       title: 'Adults',
-      desc: 'Ages 13 and above'
+      desc: 'Ages 13 and above',
+      action: 'adult'
     },
     {
       title: 'Children',
-      desc: 'Ages 1 - 12'
+      desc: 'Ages 1 - 12',
+      action: 'children'
     },
     {
       title: 'Infant',
-      desc: 'Under 2'
+      desc: 'Under 2',
+      action: 'infant'
     },
     {
       title: 'Pets',
-      desc: 'Bringing a service animal?'
+      desc: 'Bringing a service animal?',
+      action: 'pet'
     }
   ]
   return (

@@ -64,7 +64,7 @@ export default function FooterNav() {
       desc: 'Cottage rentals'
     },
     {
-      title: 'Mijas',
+      title: 'Mijar',
       desc: 'Apartment rentals'
     }
   ]
