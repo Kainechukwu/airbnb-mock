@@ -1,24 +1,51 @@
 // import Icon from '../components/ui/Icon'
-import { useState, useMemo } from 'react'
-import { DashboardContext } from '../utils/context'
+import { useState, useMemo, useEffect, useCallback } from 'react'
+import { DashboardContext, constructUrlParams } from '../utils'
 import { Header, Footer } from '../components/ui'
 import SearchResultsPage from './SearchResultsPage'
 import { Filter } from '../components/ui'
+import { useSearchParams } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 import { ShowMore } from '../components/ui'
+
+// Example usage:
+// const inputObject: TravelParams = { adult: 2, children: 0, infant: 1, pet: 0 }
+// const urlParams: string = constructUrlParams(inputObject)
+
 export default function Dashboard() {
+  const navigate = useNavigate()
+  const [searchParams] = useSearchParams()
   const [searchType, setSearchType] = useState('stays')
+  const [search, setSearch] = useState('')
+  const tag = searchParams.get('tag')
+
   const [who, setWho] = useState({ adult: 0, children: 0, infant: 0, pet: 0 })
+
+  const handleSearch = useCallback(() => {
+    const string = `/?tag=${tag}&${constructUrlParams(who)}`
+    console.log(string)
+
+    // navigate(string)
+    setSearch(string)
+  }, [tag, who])
+
+  useEffect(() => {
+    navigate(search)
+  }, [search, navigate])
+  //
   const DashboardContextValue = useMemo(
     () => ({
       searchType,
       setSearchType,
       who,
-      setWho
+      setWho,
+      search,
+      setSearch,
+      handleSearch
     }),
-    [searchType, setSearchType, who, setWho]
+    [searchType, setSearchType, who, setWho, search, setSearch, handleSearch]
   )
-  //
   return (
     <DashboardContext.Provider value={DashboardContextValue}>
       <div className="size-full">

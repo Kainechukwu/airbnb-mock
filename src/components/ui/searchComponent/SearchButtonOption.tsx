@@ -81,18 +81,23 @@ export default function SearchButtonOption({ item, children }) {
                 )}
                 {item.title.toLowerCase() == 'who' && (
                   <div className="flex items-center gap-4">
-                    <span className=" max-w-20 truncate text-xs text-[#727272]">
+                    <span
+                      className={` ${
+                        isOpen ? 'max-w-20 truncate' : ''
+                      }   text-xs text-[#727272]`}
+                    >
                       {' '}
                       {handleWho().length > 0 ? handleWho() : item.desc}
                     </span>
-                    {who.adult + who.pet + who.children + who.infant > 0 && (
-                      <span
-                        className="absolute inset-y-0  right-[-30px] flex cursor-pointer items-center text-sm"
-                        onClick={() => Refresh()}
-                      >
-                        <FaTimes />
-                      </span>
-                    )}
+                    {who.adult + who.pet + who.children + who.infant > 0 &&
+                      isOpen && (
+                        <span
+                          className="absolute inset-y-0  right-[-30px] flex cursor-pointer items-center text-sm"
+                          onClick={() => Refresh()}
+                        >
+                          <FaTimes />
+                        </span>
+                      )}
                   </div>
                 )}
               </div>
