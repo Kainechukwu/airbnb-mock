@@ -12,7 +12,7 @@ export default function Header() {
   const dashboardSearchTypes = ['stays', 'experiences', 'online experiences']
   return (
     <div className="flex flex-col border-b border-gray-200">
-      <div className="flex items-center justify-between px-16 py-[16px]">
+      <div className="mx-auto w-full max-w-[1700px] flex items-center justify-between px-16 py-[16px]">
         <div className="h-[41px] w-[121px]">
           <img
             className="size-full"

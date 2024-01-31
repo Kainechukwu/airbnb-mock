@@ -86,12 +86,16 @@ export default function Dashboard() {
             Learn about Guest Favorites, the most loved homes on Airbnb
           </span>
         </div>
-        <div className="sticky top-0  z-[10000]  bg-white">
-          <Header />
-          <Filter />
+        <div className="sticky top-0 z-[10000]    bg-white">
+          <div className="bg-white ">
+            <Header />
+            <Filter />
+          </div>
         </div>
-        <SearchResultsPage />
-        <ShowMore />
+        <div className="mx-auto max-w-[1700px]">
+          <SearchResultsPage />
+          <ShowMore />
+        </div>
         <Footer />
       </div>
     </DashboardContext.Provider>

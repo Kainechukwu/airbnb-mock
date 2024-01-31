@@ -8,21 +8,23 @@ export default function BottomLinks() {
   const bottomLinks = ['Terms', 'Sitemap', 'Privacy', 'Your Privacy Choices']
 
   return (
-    <div className="flex items-center justify-between px-16 py-[28px]">
-      <div className="flex items-center  text-sm font-normal">
+    <div className="flex items-center px-16 py-[28px] xl:justify-between">
+      <div className="flex flex-col items-center text-sm  font-normal xl:flex-row">
         <span className="">© 2024 Airbnb, Inc.</span>
-        {bottomLinks.map((link) => (
-          <div key={link} className="flex items-center ">
-            <span className="px-2">.</span>
-            <span>{link}</span>
+        <div className="flex items-center">
+          {bottomLinks.map((link) => (
+            <div key={link} className="flex flex-row items-center">
+              <span className="px-2">.</span>
+              <span>{link}</span>
+            </div>
+          ))}
+          <div className="">
+            <img
+              src="/bluemarkpill.png"
+              alt="pill"
+              className="w-[26px ml-2 h-[14px]"
+            />
           </div>
-        ))}
-        <div className="">
-          <img
-            src="/bluemarkpill.png"
-            alt="pill"
-            className="w-[26px ml-2 h-[14px]"
-          />
         </div>
       </div>
 

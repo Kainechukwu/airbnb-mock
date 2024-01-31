@@ -70,7 +70,7 @@ export default function FooterNav() {
   ]
   return (
     <div className="mt-2">
-      <div className="flex items-center gap-[32px] border-b-[1px] border-b-[#DDDDDD] ">
+      <div className="flex items-center  gap-[32px] overflow-x-auto border-b-[1px] border-b-[#DDDDDD] ">
         {navs.map((nav) => (
           <div
             onClick={() => setSelected(nav)}
@@ -79,14 +79,14 @@ export default function FooterNav() {
               selected.toLowerCase() == nav.toLowerCase()
                 ? 'border-[#222222] text-[#222222] '
                 : 'border-transparent text-[#727272] '
-            } flex cursor-pointer flex-col items-center justify-center border-b-[2px] pb-4   pt-6 font-semibold  `}
+            } flex cursor-pointer flex-col items-center justify-center text-nowrap border-b-[2px] pb-4   pt-6 font-semibold  `}
           >
             <span className="text-sm">{nav}</span>
           </div>
         ))}
       </div>
 
-      <div className="grid grid-cols-6 gap-4 pt-[36px]">
+      <div className="grid  grid-cols-3 gap-4 pt-[36px] sm:grid-cols-3 2xl:grid-cols-6">
         {footerResults.map((res) => (
           <FooterNavResults key={res.title} title={res.title} desc={res.desc} />
         ))}

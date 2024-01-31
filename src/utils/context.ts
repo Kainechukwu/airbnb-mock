@@ -21,7 +21,7 @@ interface IDashboardContext {
   search: string | null
   setSearch: (e) => void
   handleSearch: () => void
-  whereValue: string | null | number
+  whereValue: string | number
   setWhereValue: (e) => void
   locationList: Array<ListType>
   setLocationList: (e) => void
@@ -36,7 +36,7 @@ const defaultContext = createContext<IDashboardContext>({
   search: null,
   setSearch: () => {},
   handleSearch: () => {},
-  whereValue: null,
+  whereValue: '',
   setWhereValue: () => {},
   locationList: [],
   setLocationList: () => {}

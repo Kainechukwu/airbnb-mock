@@ -12,7 +12,7 @@ export default function Where() {
   return (
     <div className="flex h-[450px] flex-col overflow-y-auto">
       {/* {whereValue} {wherevalueIsInDefaultList ? 'true' : 'false'} */}
-      {wherevalueIsInDefaultList || whereValue?.length == 0 ? (
+      {wherevalueIsInDefaultList || String(whereValue)?.length == 0 ? (
         <EmptyWhereSearch />
       ) : (
         <WhereSearchList />

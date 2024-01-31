@@ -136,7 +136,7 @@ export default function FilterSlider() {
             onClick={() => handleSelect(link.title)}
             className={`${
               filterQuery.toLowerCase() == link.title.toLowerCase()
-                ? 'border-[#010101] text-[#010101]   hover:border-[#010101]  hover:text-[#010101] '
+                ? '!hover:border-[#010101] !hover:text-[#010101]   !border-[#010101]  !text-[#010101] '
                 : ''
             } flex cursor-pointer flex-col items-center justify-center border-b-[2px] border-transparent   pb-4 pt-6 text-[#727272] hover:border-gray-200 hover:text-[#010101]`}
           >

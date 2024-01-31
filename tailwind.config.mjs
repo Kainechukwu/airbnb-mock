@@ -10,6 +10,9 @@ export default withMT({
         'sterling-red': {
           500: '#CF2A2A',
           900: '#aa0000'
+        },
+        screens: {
+          '3xl': '1900px'
         }
       },
       boxShadow: {

@@ -6,12 +6,14 @@ export default function Modal({
   open,
   setIsOpen,
   children,
-  width = 'sm:max-w-[1034px]'
+  width = 'sm:max-w-[1034px]',
+  title
 }: {
   open: boolean
   setIsOpen: (e) => void
   children: any
   width?: string
+  title?: string
 }) {
   return (
     <Transition.Root show={open} as={Fragment}>
@@ -45,11 +47,17 @@ export default function Modal({
                 <div>
                   <span
                     onClick={() => setIsOpen(false)}
-                    className="cursor-pointer text-[#222222]"
+                    className="absolute top-4 cursor-pointer text-[#222222]"
                   >
                     <LiaTimesSolid />
                   </span>
 
+                  {title && (
+                    <div className="-mt-2 flex w-full  border-b border-b-gray-200 pb-6 ">
+                      {' '}
+                      <span className="mx-auto ">{title}</span>
+                    </div>
+                  )}
                   <div className="mt-3 text-center sm:mt-5">{children}</div>
                 </div>
               </Dialog.Panel>
