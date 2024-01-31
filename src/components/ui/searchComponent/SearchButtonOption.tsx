@@ -6,9 +6,12 @@ export function closeButton(setIsOpen) {
 export default function SearchButtonOption({ item, children }) {
   const [isOpen, setIsOpen] = useState(false)
   const setPosition = (itemName) => {
-    let position = 'bottom-[-45px]'
+    let position = 'bottom-[-45px] left-0'
     if (itemName.toLowerCase().includes('where')) {
-      position = 'bottom-[-470px]'
+      position = 'bottom-[-470px] left-0'
+    }
+    if (itemName.toLowerCase().includes('who')) {
+      position = 'bottom-[-402px] right-0'
     }
 
     return position
@@ -18,7 +21,7 @@ export default function SearchButtonOption({ item, children }) {
     <OutsideClickHandler onOutsideClick={() => closeButton(setIsOpen)}>
       <div className="">
         {/* <div className="fixed top-0 z-[-4px] size-2 bg-transparent"> </div> */}
-        <span onClick={() => setIsOpen(!isOpen)}>
+        <span onClick={() => setIsOpen(true)}>
           {' '}
           <div
             className={`${
@@ -51,7 +54,7 @@ export default function SearchButtonOption({ item, children }) {
               <div
                 className={`${setPosition(
                   item.title
-                )} absolute left-0 z-10  rounded-[40px] bg-white pt-[10px]  shadow-[0px_1px_20px_0px_rgba(0,0,0,0.15)]`}
+                )} absolute  z-10  rounded-[40px] bg-white pt-[10px]  shadow-[0px_1px_20px_0px_rgba(0,0,0,0.15)]`}
               >
                 {children}
               </div>

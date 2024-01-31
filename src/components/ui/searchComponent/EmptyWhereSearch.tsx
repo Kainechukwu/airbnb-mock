@@ -33,10 +33,10 @@ export default function EmptyWhereSearch() {
         <span className="text-[13px] font-semibold text-[#222222]">
           Search by region
         </span>
-        <div className="grid grid-cols-3 gap-4 mb-4">
+        <div className="mb-4 grid grid-cols-3 gap-4">
           {options.map((item) => (
             <div key={item.name} className="flex flex-col">
-              <div className="size-[124px] border hover:border-[#222222] cursor-pointer mb-2 rounded-xl">
+              <div className="mb-2 size-[124px] cursor-pointer rounded-xl border hover:border-[#222222]">
                 <img className="size-full rounded-xl" src={item.img} alt="" />
               </div>
 
