@@ -312,3 +312,41 @@ export const currencyOptions = [
   { id: 49, title: 'Bulgarian Lev', desc: 'BGN - лв' },
   { id: 50, title: 'Swiss Franc', desc: 'CHF - Fr' }
 ]
+
+export const locationOptions = [
+  {
+    id: 1,
+    name: 'Africa'
+  },
+  {
+    id: 2,
+    name: 'Canada'
+  }
+]
+
+export const staticLocationOptions = [
+  {
+    name: "I'm flexible",
+    img: '/worldmap2.png'
+  },
+  {
+    name: 'Africa',
+    img: '/worldmap2.png'
+  },
+  {
+    name: 'United Kingdom',
+    img: '/worldmap2.png'
+  },
+  {
+    name: 'United States',
+    img: '/worldmap2.png'
+  },
+  {
+    name: 'Canada',
+    img: '/worldmap2.png'
+  },
+  {
+    name: 'Middle East',
+    img: '/worldmap2.png'
+  }
+]

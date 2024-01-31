@@ -1,6 +1,6 @@
 // import Icon from '../components/ui/Icon'
 import { useState, useMemo, useEffect, useCallback } from 'react'
-import { DashboardContext, constructUrlParams } from '../utils'
+import { DashboardContext, constructUrlParams, locationOptions } from '../utils'
 import { Header, Footer } from '../components/ui'
 import SearchResultsPage from './SearchResultsPage'
 import { Filter } from '../components/ui'
@@ -18,6 +18,9 @@ export default function Dashboard() {
   const [searchParams] = useSearchParams()
   const [searchType, setSearchType] = useState('stays')
   const [search, setSearch] = useState('')
+  const [locationList, setLocationList] = useState<any[]>([])
+  const [whereValue, setWhereValue] = useState('')
+
   const tag = searchParams.get('tag')
 
   const [who, setWho] = useState({ adult: 0, children: 0, infant: 0, pet: 0 })
@@ -33,6 +36,19 @@ export default function Dashboard() {
   useEffect(() => {
     navigate(search)
   }, [search, navigate])
+
+  const handleLocationFilter = useCallback(() => {
+    if (whereValue.length > 0) {
+      setLocationList(locationOptions)
+    } else {
+      setLocationList([])
+      return
+    }
+  }, [whereValue.length])
+
+  useEffect(() => {
+    handleLocationFilter()
+  }, [handleLocationFilter])
   //
   const DashboardContextValue = useMemo(
     () => ({
@@ -42,9 +58,25 @@ export default function Dashboard() {
       setWho,
       search,
       setSearch,
-      handleSearch
+      handleSearch,
+      whereValue,
+      setWhereValue,
+      locationList,
+      setLocationList
     }),
-    [searchType, setSearchType, who, setWho, search, setSearch, handleSearch]
+    [
+      searchType,
+      setSearchType,
+      who,
+      setWho,
+      search,
+      setSearch,
+      handleSearch,
+      whereValue,
+      setWhereValue,
+      locationList,
+      setLocationList
+    ]
   )
   return (
     <DashboardContext.Provider value={DashboardContextValue}>

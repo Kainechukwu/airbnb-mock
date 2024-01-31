@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import OutsideClickHandler from 'react-outside-click-handler'
 import { DashboardContext } from '../../../utils'
 import { FaTimes } from 'react-icons/fa'
@@ -6,7 +6,9 @@ export function closeButton(setIsOpen) {
   setIsOpen(false)
 }
 export default function SearchButtonOption({ item, children }) {
-  const { setWho, who } = useContext(DashboardContext)
+  const { setWho, who, whereValue, setWhereValue } =
+    useContext(DashboardContext)
+  const [defaultWhereValue, setDefaultWhereValue] = useState(whereValue)
 
   const handleWho = () => {
     const guests = who.adult + who.children
@@ -46,6 +48,10 @@ export default function SearchButtonOption({ item, children }) {
 
     return position
   }
+
+  useEffect(() => {
+    setDefaultWhereValue(whereValue)
+  }, [whereValue])
 
   return (
     <OutsideClickHandler onOutsideClick={() => closeButton(setIsOpen)}>
@@ -106,6 +112,8 @@ export default function SearchButtonOption({ item, children }) {
                   <div className="flex items-center gap-4">
                     <span className={`text-xs text-[#727272]`}>
                       <input
+                        defaultValue={defaultWhereValue}
+                        onChange={(e) => setWhereValue(e.target.value)}
                         placeholder={'Search destination'}
                         className={`${
                           isOpen ? '' : ''

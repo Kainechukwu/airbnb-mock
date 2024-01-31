@@ -7,6 +7,11 @@ export const OverviewContext = createContext<undefined | IOverviewContext>(
   undefined
 )
 
+type ListType = {
+  id: number
+  name: string
+}
+
 interface IDashboardContext {
   contextName?: string
   searchType: string | null
@@ -16,6 +21,10 @@ interface IDashboardContext {
   search: string | null
   setSearch: (e) => void
   handleSearch: () => void
+  whereValue: string | null | number
+  setWhereValue: (e) => void
+  locationList: Array<ListType>
+  setLocationList: (e) => void
 }
 
 const defaultContext = createContext<IDashboardContext>({
@@ -26,7 +35,11 @@ const defaultContext = createContext<IDashboardContext>({
   setWho: () => {},
   search: null,
   setSearch: () => {},
-  handleSearch: () => {}
+  handleSearch: () => {},
+  whereValue: null,
+  setWhereValue: () => {},
+  locationList: [],
+  setLocationList: () => {}
 })
 
 export const DashboardContext = defaultContext
