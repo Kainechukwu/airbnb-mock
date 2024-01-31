@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import FooterNavResults from './FooterNavResults'
 export default function FooterNav() {
+  const [selected, setSelected] = useState('Popular')
+
   const navs = [
     'Popular',
     'Arts & culture',
@@ -66,7 +68,6 @@ export default function FooterNav() {
       desc: 'Apartment rentals'
     }
   ]
-  const [selected, setSelected] = useState('Popular')
   return (
     <div className="mt-2">
       <div className="flex items-center gap-[32px] border-b-[1px] border-b-[#DDDDDD] ">

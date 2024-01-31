@@ -24,7 +24,7 @@ export default function Dashboard() {
             Learn about Guest Favorites, the most loved homes on Airbnb
           </span>
         </div>
-        <div className="sticky top-0  z-[1000000]  bg-white">
+        <div className="sticky top-0  z-[10000]  bg-white">
           <Header />
           <Filter />
         </div>
