@@ -2,21 +2,29 @@
   min-height: calc(100vh - 200px);
 }
 
-.filterSwiper{
+.filterSwiper {
   height: 100px !important;
   width: 100%;
   // padding-left: 0%;
 }
 
-.filterSwiperSlide{
+.filterSwiperSlide {
   max-width: max-content !important;
-  padding: 0 16px
+  padding: 0 16px;
 }
 
 .swiper {
   height: 280px;
   border-radius: 14px;
   width: 100%;
+  cursor:pointer
+}
+
+.swiper:hover.swiper-button-prev {
+  display: block !important;
+}
+.swiper:hover.swiper-button-next {
+  display: block !important;
 }
 
 .swiperSlide {
@@ -29,9 +37,10 @@
   }
 }
 
-.searchBoxShadow{
-  box-shadow: 0 3px 12px 0 rgba(0,0,0,0.1), 0 1px 2px 0 rgba(0,0,0,0.08);
-
+.searchBoxShadow {
+  box-shadow:
+    0 3px 12px 0 rgba(0, 0, 0, 0.1),
+    0 1px 2px 0 rgba(0, 0, 0, 0.08);
 }
 
 // .swiper-button-next,
@@ -46,11 +55,15 @@
 .swiper-button-prev {
   background-image: url('/airbnb-prev.png');
   min-width: 31px;
+  // display: none !important;
+ 
 }
 
 .swiper-button-next {
   background-image: url('/airbnb-next.png');
   min-width: 30px;
+  // display: none  !important;
+
 }
 
 .swiper-button-next,
@@ -62,7 +75,7 @@
 
 .swiper-button-next:after,
 .swiper-button-prev:after {
-  display: none;
+  display: none !important;
 }
 
 .swiper-pagination-bullet {

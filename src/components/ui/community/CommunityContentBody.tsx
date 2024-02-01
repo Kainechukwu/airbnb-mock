@@ -29,7 +29,7 @@ export default function CommunityContentBody({
       {selected?.toLowerCase() !== 'currency' && (
         <div className="mb-10 flex cursor-pointer items-center gap-2 rounded-[12px] bg-[#F7F7F7]  p-4 ">
           <div className="mr-2 flex flex-col items-start">
-            <div className="flex gap-2 items-center mb-1">
+            <div className="mb-1 flex items-center gap-2">
               <span className="text-base text-[#222222]">Translation</span>
               <img
                 className="size-[24px]"

@@ -7,11 +7,15 @@ import Amenities from './Amenities'
 import BookingOptions from './BookingOptions'
 import AccessibilityFeatures from './AccessibilityFeatures'
 import HostLanguage from './HostLanguage'
+import TypeofPlace from './TypeofPlace'
 
 export default function Filter() {
   return (
-    <div className="">
+    <div className="relative">
       <div className="flex flex-col">
+        <FilterSection header="Type of place">
+          <TypeofPlace />
+        </FilterSection>
         <FilterSection header="Beds and bathrooms">
           <BedsAndBathrooms />
         </FilterSection>

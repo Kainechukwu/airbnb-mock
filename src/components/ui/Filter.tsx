@@ -42,8 +42,18 @@ export default function Filter() {
         width="sm:max-w-[800px]"
         title="Filter"
       >
-        <div className="max-h-[540px] overflow-y-auto ">
-          <FilterModalComponent />
+        <div className="">
+          <div className="relative max-h-[540px] overflow-y-auto ">
+            <FilterModalComponent />
+          </div>
+          <div className=" flex w-full justify-between border-t border-t-gray-300 bg-white pt-4">
+            <span className="text-[#222222]">Clear all</span>
+
+            <button className="rounded-md bg-[#222222] px-6 py-3 text-white">
+              {' '}
+              show places
+            </button>
+          </div>
         </div>
       </Modal>
     </div>
