@@ -28,12 +28,15 @@ export default function Dashboard() {
   const [who, setWho] = useState({ adult: 0, children: 0, infant: 0, pet: 0 })
 
   const handleSearch = useCallback(() => {
-    const string = `/?tag=${tag}&${constructUrlParams(who)}`
+    const string = `/?tag=${tag}&${constructUrlParams({
+      ...who,
+      where: whereValue
+    })}`
     console.log(string)
 
     // navigate(string)
     setSearch(string)
-  }, [tag, who])
+  }, [tag, who, whereValue])
 
   useEffect(() => {
     navigate(search)
@@ -122,7 +125,7 @@ export default function Dashboard() {
       <div className="size-full">
         <div
           ref={headerRef}
-          className="flex items-center justify-center border-b border-b-[#E8E8E8] bg-[#F7F7F7]"
+          className="hidden items-center justify-center border-b border-b-[#E8E8E8] bg-[#F7F7F7] md:flex"
         >
           <span className="px-6 pb-4 pt-6 text-base font-medium text-[#222222] underline">
             Learn about Guest Favorites, the most loved homes on Airbnb

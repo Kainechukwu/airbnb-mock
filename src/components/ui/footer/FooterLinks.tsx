@@ -37,7 +37,7 @@ export default function FooterLinks() {
     }
   ]
   return (
-    <div className="px-16  ">
+    <div className="px-6 md:px-16   ">
       <div className="border-b-[1px] border-b-[#DDDDDD] pb-[50px]">
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {links.map((link) => (

@@ -9,7 +9,7 @@ export default function Header() {
   const [modalOpen, setModalOpen] = useState(false)
   return (
     <div className="flex flex-col border-b border-gray-200">
-      <div className="mx-auto flex w-full max-w-[1700px] items-center justify-between px-16 py-[16px]">
+      <div className="mx-auto flex w-full max-w-[1700px] items-center justify-between px-6 py-[16px]  md:px-16">
         <div className="h-[41px] w-[121px]">
           <img
             className="size-full"

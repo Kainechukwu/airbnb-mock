@@ -77,7 +77,7 @@ export default function SearchComponent() {
         >
           <div>
             <div
-              className={`${isShowingBigSearch ? 'flex' : 'hidden'}
+              className={`${isShowingBigSearch ? 'hidden md:flex' : 'hidden'}
         transition-opacity duration-500 ease-in-out ${
           isShowingBigSearch ? 'opacity-100' : 'opacity-0'
         } searchBoxShadow relative mx-auto mb-6  w-full max-w-[850px] items-center  gap-0 rounded-[40px] border border-gray-200 bg-white`}

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import FilterSection from './FilterSection'
 import BedsAndBathrooms from './BedsAndBathrooms'
 import TopTierStays from './TopTierStays'
@@ -10,8 +10,14 @@ import HostLanguage from './HostLanguage'
 import TypeofPlace from './TypeofPlace'
 
 export default function Filter() {
+  const filterRef = useRef<HTMLDivElement>(null)
+  useEffect(() => {
+    // if (filterRef && filterRef?.current) {
+    filterRef?.current?.scrollTo({ top: 0, behavior: 'smooth' })
+    // }
+  }, [])
   return (
-    <div className="relative">
+    <div ref={filterRef} className="relative">
       <div className="flex flex-col">
         <FilterSection header="Type of place">
           <TypeofPlace />

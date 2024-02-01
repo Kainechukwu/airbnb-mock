@@ -49,10 +49,10 @@ export default function SearchButtonOption({ item, children }) {
       position = 'bottom-[-402px] right-0'
     }
     if (itemName.toLowerCase().includes('check in')) {
-      position = 'bottom-[-518px] right-[-424px]'
+      position = 'bottom-[-568px] right-[-424px]'
     }
     if (itemName.toLowerCase().includes('check out')) {
-      position = 'bottom-[-518px] right-[-271px]'
+      position = 'bottom-[-568px] right-[-271px]'
     }
 
     return position

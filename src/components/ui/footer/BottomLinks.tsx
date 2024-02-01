@@ -8,8 +8,8 @@ export default function BottomLinks() {
   const bottomLinks = ['Terms', 'Sitemap', 'Privacy', 'Your Privacy Choices']
 
   return (
-    <div className="flex items-center px-16 py-[28px] xl:justify-between">
-      <div className="flex flex-col items-center text-sm  font-normal xl:flex-row">
+    <div className="flex items-center px-6 py-[28px]  md:px-16 xl:justify-between">
+      <div className="mx-auto flex flex-col items-center  text-sm font-normal xl:mx-0 xl:flex-row">
         <span className="">© 2024 Airbnb, Inc.</span>
         <div className="flex items-center">
           {bottomLinks.map((link) => (
@@ -28,7 +28,7 @@ export default function BottomLinks() {
         </div>
       </div>
 
-      <div className="flex items-center text-sm font-semibold text-[#222222]">
+      <div className="hidden items-center text-sm font-semibold text-[#222222] xl:flex">
         <TbWorld />
         <span className="ml-2">
           <span className="text-[13px]">English</span> (US)
