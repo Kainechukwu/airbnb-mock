@@ -10,14 +10,14 @@ export default function Filter() {
   const [modalOpen, setModalOpen] = useState(false)
 
   return (
-    <div className="mx-auto w-full max-w-[1700px] px-16">
+    <div className="mx-auto w-full max-w-[1700px] px-6 md:px-16 ">
       <div className=" flex items-center justify-between">
         <div className="mr-6 flex flex-1 overflow-x-auto">
           {/* <FilterLinks /> */}
           <FilterSlider />
         </div>
 
-        <div className="flex gap-4">
+        <div className=" hidden gap-4 lg:flex">
           <div
             onClick={() => setModalOpen(true)}
             className="flex cursor-pointer items-center gap-2 rounded-[12px] border border-[#E1E1E1] p-4 text-xs font-semibold text-[#292929]"

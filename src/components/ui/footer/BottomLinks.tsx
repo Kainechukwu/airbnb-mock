@@ -8,7 +8,7 @@ export default function BottomLinks() {
   const bottomLinks = ['Terms', 'Sitemap', 'Privacy', 'Your Privacy Choices']
 
   return (
-    <div className="flex items-center px-16 py-[28px] xl:justify-between">
+    <div className="flex items-center px-6 py-[28px]  md:px-16 xl:justify-between">
       <div className="flex flex-col items-center text-sm  font-normal xl:flex-row">
         <span className="">© 2024 Airbnb, Inc.</span>
         <div className="flex items-center">

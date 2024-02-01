@@ -125,7 +125,7 @@ export default function Dashboard() {
       <div className="size-full">
         <div
           ref={headerRef}
-          className="flex items-center justify-center border-b border-b-[#E8E8E8] bg-[#F7F7F7]"
+          className="hidden md:flex items-center justify-center border-b border-b-[#E8E8E8] bg-[#F7F7F7]"
         >
           <span className="px-6 pb-4 pt-6 text-base font-medium text-[#222222] underline">
             Learn about Guest Favorites, the most loved homes on Airbnb

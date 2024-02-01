@@ -6,7 +6,7 @@ import BottomLinks from './BottomLinks'
 export default function Footer() {
   return (
     <div className="bg-[#F7F7F7] ">
-      <div className="px-16 pb-2 pt-[34px]">
+      <div className="px-6 pb-2  pt-[34px] md:px-16">
         <h1 className="text-[18px] font-semibold text-[#222222]">
           {' '}
           Inspiration for future getaways

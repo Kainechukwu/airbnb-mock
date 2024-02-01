@@ -23,8 +23,8 @@ export default function SearchResults() {
   }, [tag, shuffle, results, where])
   return (
     // eslint-disable-next-line tailwindcss/no-custom-classname
-    <div className={`bodyHeight  px-16`}>
-      <div className="3xl:grid-cols-5 mt-6 grid grid-cols-1 gap-x-6  gap-y-10 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 ">
+    <div className={`bodyHeight  px-6 md:px-16 `}>
+      <div className="3xl:grid-cols-5 mt-6 grid grid-cols-1 gap-x-6  gap-y-10 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 ">
         {loading && <div>...Loading</div>}
         {!loading &&
           results.map((result) => (
