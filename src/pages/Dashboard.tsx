@@ -20,7 +20,7 @@ export default function Dashboard() {
   const [search, setSearch] = useState('')
   const [locationList, setLocationList] = useState<any[]>([])
   const [whereValue, setWhereValue] = useState('')
-
+  const [isShowingBigSearch, setIsShowingBigSearch] = useState(false)
   const tag = searchParams.get('tag')
 
   const [who, setWho] = useState({ adult: 0, children: 0, infant: 0, pet: 0 })
@@ -62,7 +62,9 @@ export default function Dashboard() {
       whereValue,
       setWhereValue,
       locationList,
-      setLocationList
+      setLocationList,
+      isShowingBigSearch,
+      setIsShowingBigSearch
     }),
     [
       searchType,
@@ -75,7 +77,9 @@ export default function Dashboard() {
       whereValue,
       setWhereValue,
       locationList,
-      setLocationList
+      setLocationList,
+      isShowingBigSearch,
+      setIsShowingBigSearch
     ]
   )
   return (

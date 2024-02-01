@@ -14,7 +14,7 @@ export default function DashboardSearchTypes() {
             searchType?.toLowerCase() == type.toLowerCase()
               ? 'font-medium text-[#222222]'
               : ''
-          } capitalize`}
+          } capitalize cursor-pointer`}
           onClick={() => setSearchType(type)}
           key={type}
         >

@@ -25,6 +25,8 @@ interface IDashboardContext {
   setWhereValue: (e) => void
   locationList: Array<ListType>
   setLocationList: (e) => void
+  isShowingBigSearch: boolean
+  setIsShowingBigSearch: (e) => void
 }
 
 const defaultContext = createContext<IDashboardContext>({
@@ -39,7 +41,9 @@ const defaultContext = createContext<IDashboardContext>({
   whereValue: '',
   setWhereValue: () => {},
   locationList: [],
-  setLocationList: () => {}
+  setLocationList: () => {},
+  isShowingBigSearch: false,
+  setIsShowingBigSearch: () => {}
 })
 
 export const DashboardContext = defaultContext

@@ -7,8 +7,9 @@ import Who from './Who'
 import { DashboardContext } from '../../../utils'
 import SearchButtonOption from './SearchButtonOption'
 import DashboardSearchTypes from '../DashboardSearchTypes'
+import SmallSearchComponent from './SmallSearchComponent'
 export default function SearchComponent() {
-  const { handleSearch } = useContext(DashboardContext)
+  const { handleSearch, isShowingBigSearch } = useContext(DashboardContext)
 
   //   const searchFiltersSmall = ['Anywhere', 'Any week', '  Add guest']
   const searchFilters = [
@@ -31,11 +32,24 @@ export default function SearchComponent() {
   ]
 
   return (
-    <div className="flex flex-col relative">
-      <div className="flex items-center justify-center mb-8 xl:absolute xl:top-[-50px] xl:inset-x-0 max-w-max mx-auto">
-        <DashboardSearchTypes />
+    <div className="relative flex flex-col">
+      <div className="mx-auto mb-8 flex max-w-max items-center justify-center xl:absolute xl:inset-x-0 xl:top-[-50px]">
+        <div className={`${isShowingBigSearch ? 'flex' : 'hidden'}`}>
+          <DashboardSearchTypes />
+        </div>
+        <div
+          className={`relative top-[-11px] ${
+            !isShowingBigSearch ? 'flex' : 'hidden'
+          }`}
+        >
+          <SmallSearchComponent />
+        </div>
       </div>
-      <div className="searchBoxShadow relative mx-auto mb-6 flex w-full max-w-[850px] items-center  gap-0 rounded-[40px] border border-gray-200 bg-white">
+      <div
+        className={`${
+          isShowingBigSearch ? 'flex' : 'hidden'
+        } searchBoxShadow relative mx-auto mb-6  w-full max-w-[850px] items-center  gap-0 rounded-[40px] border border-gray-200 bg-white`}
+      >
         <div
           onClick={() => handleSearch()}
           className="absolute  right-2 z-[2] flex size-[48px] items-center justify-center rounded-full bg-[#EC4C60] text-[18px] text-white"
