@@ -7,16 +7,47 @@ export const OverviewContext = createContext<undefined | IOverviewContext>(
   undefined
 )
 
+type ListType = {
+  id: number
+  name: string
+}
+
 interface IDashboardContext {
   contextName?: string
   searchType: string | null
   setSearchType: (e) => void
+  who: any | null
+  setWho: (e) => void
+  search: string | null
+  setSearch: (e) => void
+  handleSearch: () => void
+  whereValue: string | number
+  setWhereValue: (e) => void
+  locationList: Array<ListType>
+  setLocationList: (e) => void
+  isShowingBigSearch: boolean
+  setIsShowingBigSearch: (e) => void
+  activeButton: string
+  setActiveButton: (e) => void
 }
 
 const defaultContext = createContext<IDashboardContext>({
   contextName: 'Dashboard',
   searchType: null,
-  setSearchType: () => {}
+  setSearchType: () => {},
+  who: {},
+  setWho: () => {},
+  search: null,
+  setSearch: () => {},
+  handleSearch: () => {},
+  whereValue: '',
+  setWhereValue: () => {},
+  locationList: [],
+  setLocationList: () => {},
+  isShowingBigSearch: false,
+  setIsShowingBigSearch: () => {},
+  activeButton: '',
+  setActiveButton: () => {}
 })
 
 export const DashboardContext = defaultContext

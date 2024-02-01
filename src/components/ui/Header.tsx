@@ -1,35 +1,39 @@
-import React, { useContext } from 'react'
-import { DashboardContext } from '../../utils'
+import React, { useState } from 'react'
+import HeaderMenu from '../ui/HeaderMenu'
 import { TbWorld } from 'react-icons/tb'
+import { SearchComponent } from '../ui'
+import { Modal } from '../ui/modals'
+import { CommunityContent } from '../ui'
+
 export default function Header() {
-  const { searchType, setSearchType } = useContext(DashboardContext)
-  const dashboardSearchTypes = ['stays', 'experiences', 'online experiences']
+  const [modalOpen, setModalOpen] = useState(false)
   return (
-    <div className="flex items-center justify-between px-16 py-[32px]">
-      <div className="">Logo</div>
-      <div className="flex items-center gap-[34px] text-base font-normal text-[#717171]">
-        {dashboardSearchTypes.map((type) => (
+    <div className="flex flex-col border-b border-gray-200">
+      <div className="mx-auto flex w-full max-w-[1700px] items-center justify-between px-16 py-[16px]">
+        <div className="h-[41px] w-[121px]">
+          <img
+            className="size-full"
+            src="/AirbnbLogo-removebg-preview.png"
+            alt=""
+          />
+        </div>
+
+        <div className="flex items-center gap-[24px]">
+          <span className="text-[#222222]">Airbnb your home</span>
           <span
-            className={`${
-              searchType?.toLowerCase() == type.toLowerCase()
-                ? 'font-medium text-[#222222]'
-                : ''
-            } capitalize`}
-            onClick={() => setSearchType(type)}
-            key={type}
+            onClick={() => setModalOpen(true)}
+            className=" cursor-pointer rounded-full p-2 text-[18px] hover:bg-[#F7F7F7]"
           >
-            {type}
+            {' '}
+            <TbWorld />
           </span>
-        ))}
+          <HeaderMenu />
+        </div>
       </div>
-      <div className="flex items-center gap-[24px]">
-        <span className="text-[#222222]">Airbnb your home</span>
-        <span>
-          {' '}
-          <TbWorld />
-        </span>
-        <button>Dropdown</button>
-      </div>
+      <SearchComponent />
+      <Modal open={modalOpen} setIsOpen={setModalOpen}>
+        <CommunityContent />
+      </Modal>
     </div>
   )
 }

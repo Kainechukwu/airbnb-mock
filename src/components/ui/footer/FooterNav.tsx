@@ -1,0 +1,96 @@
+import React, { useState } from 'react'
+import FooterNavResults from './FooterNavResults'
+export default function FooterNav() {
+  const [selected, setSelected] = useState('Popular')
+
+  const navs = [
+    'Popular',
+    'Arts & culture',
+    'Outdoors',
+    'Mountains',
+    'Beach',
+    'Unique stays',
+    'Categories',
+    'Things to do',
+    'Airbnb-friendly apartments'
+  ]
+
+  const footerResults = [
+    {
+      title: 'Canmore',
+      desc: 'Apartment rentals'
+    },
+
+    {
+      title: 'Benlamadena',
+      desc: 'Beach house rentals'
+    },
+    {
+      title: 'Marbella',
+      desc: 'Cottage rentals'
+    },
+    {
+      title: 'Mijas',
+      desc: 'Apartment rentals'
+    },
+    {
+      title: 'Pressccot',
+      desc: 'Apartment rentals'
+    },
+
+    {
+      title: 'Sonoma',
+      desc: 'Beach house rentals'
+    },
+    {
+      title: 'Joutenheim',
+      desc: 'Pet-friendly rentals'
+    },
+    {
+      title: 'Santa Barbara',
+      desc: 'Apartment rentals'
+    },
+    {
+      title: 'Monterey',
+      desc: 'Apartment rentals'
+    },
+
+    {
+      title: 'Anaheim',
+      desc: 'Beach house rentals'
+    },
+    {
+      title: 'Helheim',
+      desc: 'Cottage rentals'
+    },
+    {
+      title: 'Mijar',
+      desc: 'Apartment rentals'
+    }
+  ]
+  return (
+    <div className="mt-2">
+      <div className="flex items-center  gap-[32px] overflow-x-auto border-b-[1px] border-b-[#DDDDDD] ">
+        {navs.map((nav) => (
+          <div
+            onClick={() => setSelected(nav)}
+            key={nav}
+            className={`${
+              selected.toLowerCase() == nav.toLowerCase()
+                ? 'border-[#222222] text-[#222222] '
+                : 'border-transparent text-[#727272] '
+            } flex cursor-pointer flex-col items-center justify-center text-nowrap border-b-[2px] pb-4   pt-6 font-semibold  `}
+          >
+            <span className="text-sm">{nav}</span>
+          </div>
+        ))}
+      </div>
+
+      <div className="grid  grid-cols-2 gap-4 pt-[36px] xl:grid-cols-3 2xl:grid-cols-6">
+        {footerResults.map((res) => (
+          <FooterNavResults key={res.title} title={res.title} desc={res.desc} />
+        ))}
+      </div>
+    </div>
+  )
+}
