@@ -42,7 +42,9 @@ export default function Filter() {
         width="sm:max-w-[800px]"
         title="Filter"
       >
-        <FilterModalComponent />
+        <div className="max-h-[540px] overflow-y-auto ">
+          <FilterModalComponent />
+        </div>
       </Modal>
     </div>
   )
