@@ -6,8 +6,14 @@ export function closeButton(setIsOpen) {
   setIsOpen(false)
 }
 export default function SearchButtonOption({ item, children }) {
-  const { setWho, who, whereValue, setWhereValue } =
-    useContext(DashboardContext)
+  const {
+    setWho,
+    who,
+    whereValue,
+    setWhereValue,
+    activeButton,
+    setActiveButton
+  } = useContext(DashboardContext)
   const [defaultWhereValue, setDefaultWhereValue] = useState(whereValue)
 
   const handleWho = () => {
@@ -42,7 +48,10 @@ export default function SearchButtonOption({ item, children }) {
     if (itemName.toLowerCase().includes('who')) {
       position = 'bottom-[-402px] right-0'
     }
-    if (itemName.toLowerCase().includes('check')) {
+    if (itemName.toLowerCase().includes('check in')) {
+      position = 'bottom-[-518px] right-[-424px]'
+    }
+    if (itemName.toLowerCase().includes('check out')) {
       position = 'bottom-[-518px] right-[-271px]'
     }
 
@@ -52,6 +61,14 @@ export default function SearchButtonOption({ item, children }) {
   useEffect(() => {
     setDefaultWhereValue(whereValue)
   }, [whereValue])
+
+  useEffect(() => {
+    if (activeButton.toLowerCase() == item.title.toLowerCase()) {
+      setIsOpen(true)
+    } else {
+      setIsOpen(false)
+    }
+  }, [activeButton, setActiveButton, item.title])
 
   return (
     <OutsideClickHandler onOutsideClick={() => closeButton(setIsOpen)}>

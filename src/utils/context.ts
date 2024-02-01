@@ -27,6 +27,8 @@ interface IDashboardContext {
   setLocationList: (e) => void
   isShowingBigSearch: boolean
   setIsShowingBigSearch: (e) => void
+  activeButton: string
+  setActiveButton: (e) => void
 }
 
 const defaultContext = createContext<IDashboardContext>({
@@ -43,7 +45,9 @@ const defaultContext = createContext<IDashboardContext>({
   locationList: [],
   setLocationList: () => {},
   isShowingBigSearch: false,
-  setIsShowingBigSearch: () => {}
+  setIsShowingBigSearch: () => {},
+  activeButton: '',
+  setActiveButton: () => {}
 })
 
 export const DashboardContext = defaultContext

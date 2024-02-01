@@ -350,3 +350,9 @@ export const staticLocationOptions = [
     img: '/worldmap2.png'
   }
 ]
+export const actionNames = {
+  where: 'Where',
+  who: 'Who',
+  checkIn: 'Check in',
+  checkOut: 'Check out'
+}

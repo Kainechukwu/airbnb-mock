@@ -1,6 +1,21 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { DashboardContext, actionNames } from '../../../utils'
 
 export default function SmallSearchButtonOption({ item }) {
+  // const [activeSearch, setActiveSearch] = useState()
+  const { setActiveButton } = useContext(DashboardContext)
+
+  function handleActiveSearch(title) {
+    if (title.toLowerCase() == 'anywhere') {
+      setActiveButton(actionNames.where)
+    }
+    if (title.toLowerCase() == 'any week') {
+      setActiveButton(actionNames.checkIn)
+    }
+    if (title.toLowerCase() == 'any guests') {
+      setActiveButton(actionNames.who)
+    }
+  }
   return (
     <div>
       <div
@@ -9,6 +24,7 @@ export default function SmallSearchButtonOption({ item }) {
         } relative`}
       >
         <div
+          onClick={() => handleActiveSearch(item.title)}
           key={item.title}
           // eslint-disable-next-line tailwindcss/no-custom-classname
           className={`${''}  relative flex cursor-pointer items-center rounded-[40px] py-3 pl-8 pr-4 hover:bg-[#EBEBEB]`}

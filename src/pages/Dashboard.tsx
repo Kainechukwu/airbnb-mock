@@ -15,6 +15,7 @@ import { ShowMore } from '../components/ui'
 
 export default function Dashboard() {
   const headerRef = useRef(null)
+  const [activeButton, setActiveButton] = useState('')
   const navigate = useNavigate()
   const [searchParams] = useSearchParams()
   const [searchType, setSearchType] = useState('stays')
@@ -65,7 +66,9 @@ export default function Dashboard() {
       locationList,
       setLocationList,
       isShowingBigSearch,
-      setIsShowingBigSearch
+      setIsShowingBigSearch,
+      activeButton,
+      setActiveButton
     }),
     [
       searchType,
@@ -80,7 +83,9 @@ export default function Dashboard() {
       locationList,
       setLocationList,
       isShowingBigSearch,
-      setIsShowingBigSearch
+      setIsShowingBigSearch,
+      activeButton,
+      setActiveButton
     ]
   )
   const handleHeaderIntersection = (entries) => {
