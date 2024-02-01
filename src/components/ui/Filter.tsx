@@ -5,9 +5,10 @@ import Switch from './Switch'
 import FilterSlider from './FilterSlider'
 import { Modal } from '../ui/modals'
 import FilterModalComponent from '../../components/ui/filterModalComponents/Filter'
-
+import { useNavigate } from 'react-router-dom'
 export default function Filter() {
   const [modalOpen, setModalOpen] = useState(false)
+  const navigate = useNavigate()
 
   return (
     <div className="mx-auto w-full max-w-[1700px] px-6 md:px-16 ">
@@ -49,7 +50,13 @@ export default function Filter() {
           <div className=" flex w-full justify-between border-t border-t-gray-300 bg-white pt-4">
             <span className="text-[#222222]">Clear all</span>
 
-            <button className="rounded-md bg-[#222222] px-6 py-3 text-white">
+            <button
+              onClick={() => {
+                setModalOpen(false)
+                navigate('/?tag=' + `${Math.random() - 1000000}`)
+              }}
+              className="rounded-md bg-[#222222] px-6 py-3 text-white"
+            >
               {' '}
               show places
             </button>
