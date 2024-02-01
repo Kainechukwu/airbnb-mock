@@ -8,6 +8,7 @@ export default function SearchResults() {
   const [loading, setLoading] = useState(false)
   const [searchParams] = useSearchParams()
   const tag = searchParams.get('tag')
+  const where = searchParams.get('where')
 
   const shuffle = useCallback((array) => {
     array.sort(() => Math.random() - 0.5)
@@ -19,7 +20,7 @@ export default function SearchResults() {
   }, [setResults, setLoading])
   useEffect(() => {
     shuffle(results)
-  }, [tag, shuffle, results])
+  }, [tag, shuffle, results, where])
   return (
     // eslint-disable-next-line tailwindcss/no-custom-classname
     <div className={`bodyHeight  px-16`}>

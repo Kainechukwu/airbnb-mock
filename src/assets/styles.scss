@@ -17,9 +17,8 @@
   height: 280px;
   border-radius: 14px;
   width: 100%;
-  cursor:pointer
+  cursor: pointer;
 }
-
 
 .swiperSlide {
   // height: 100%;
@@ -50,14 +49,12 @@
   background-image: url('/airbnb-prev.png');
   min-width: 31px;
   // display: none;
- 
 }
 
 .swiper-button-next {
   background-image: url('/airbnb-next.png');
   min-width: 30px;
   // display: none ;
-
 }
 
 .swiper:hover .swiper-button-prev {
@@ -75,8 +72,6 @@
 .swiper-button-next {
   opacity: 0 !important;
 }
-
-
 
 .swiper-button-next,
 .swiper-button-prev {
@@ -122,3 +117,43 @@
 //   right: 0;
 //   background-image: url('/airbnb-next.png');
 // }
+
+.rmdp-wrapper {
+  background-color: #fff !important;
+  border-radius: 5px !important;
+  direction: ltr !important;
+  text-align: center !important;
+  width: 100% !important;
+}
+.rmdp-shadow {
+  box-shadow: none !important;
+}
+
+.rmdp-calendar {
+  height: max-content;
+  padding: 11px;
+  width: 711px !important;
+}
+
+.rmdp-arrow {
+  border: solid #222222;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  height: 6px;
+  margin-top: 5px;
+  padding: 2px;
+  width: 6px;
+}
+
+.rmdp-day-picker {
+  padding: 5px;
+  display: flex !important;
+  justify-content: space-between !important;
+}
+.rmdp-day, .rmdp-week-day {
+  color: #000;
+  cursor: pointer;
+  height: 44px !important;
+  position: relative;
+  width: 44px !important;
+}

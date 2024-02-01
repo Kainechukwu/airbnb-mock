@@ -6,7 +6,7 @@ export default function Check() {
   const options = ['Dates', 'Months', 'Flexible']
   const [option, setOption] = useState(options[0])
   return (
-    <div className="h-[500px] w-[850px] p-8">
+    <div className="h-[550px] w-[850px] p-8">
       <div className="flex flex-col">
         <div className="mx-auto flex max-w-max items-center  justify-center gap-2 rounded-[40px] bg-[#EBEBEB] p-1">
           {options.map((item) => (

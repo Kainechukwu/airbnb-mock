@@ -28,12 +28,15 @@ export default function Dashboard() {
   const [who, setWho] = useState({ adult: 0, children: 0, infant: 0, pet: 0 })
 
   const handleSearch = useCallback(() => {
-    const string = `/?tag=${tag}&${constructUrlParams(who)}`
+    const string = `/?tag=${tag}&${constructUrlParams({
+      ...who,
+      where: whereValue
+    })}`
     console.log(string)
 
     // navigate(string)
     setSearch(string)
-  }, [tag, who])
+  }, [tag, who, whereValue])
 
   useEffect(() => {
     navigate(search)
