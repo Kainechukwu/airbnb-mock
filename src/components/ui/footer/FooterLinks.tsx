@@ -39,16 +39,25 @@ export default function FooterLinks() {
   return (
     <div className="px-16  ">
       <div className="border-b-[1px] border-b-[#DDDDDD] pb-[50px]">
-        <div className="grid grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {links.map((link) => (
-            <div key={link.title} className="flex flex-col gap-3 text-[14px]">
-              <span className="font-semibold text-[#222222]">{link.title}</span>
-              {link?.links &&
-                link.links.map((item) => (
-                  <span key={item} className="font-normal text-[#222222]">
-                    {item}
-                  </span>
-                ))}
+            <div key={link.title} className="flex flex-col">
+              <div className="flex flex-col gap-3 text-[14px]">
+                <span className="font-semibold text-[#222222]">
+                  {link.title}
+                </span>
+                {link?.links &&
+                  link.links.map((item) => (
+                    <span key={item} className="font-normal text-[#222222]">
+                      {item}
+                    </span>
+                  ))}
+              </div>
+              <div
+                className={`${
+                  link.title !== 'Airbnb' ? 'block' : 'hidden'
+                } h-8 border-b-[1px] border-b-[#DDDDDD] md:hidden`}
+              ></div>
             </div>
           ))}
         </div>

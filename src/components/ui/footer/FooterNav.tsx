@@ -86,7 +86,7 @@ export default function FooterNav() {
         ))}
       </div>
 
-      <div className="grid  grid-cols-3 gap-4 pt-[36px] sm:grid-cols-3 2xl:grid-cols-6">
+      <div className="grid  grid-cols-2 gap-4 pt-[36px] xl:grid-cols-3 2xl:grid-cols-6">
         {footerResults.map((res) => (
           <FooterNavResults key={res.title} title={res.title} desc={res.desc} />
         ))}

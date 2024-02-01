@@ -6,6 +6,7 @@ import Check from './Check'
 import Who from './Who'
 import { DashboardContext } from '../../../utils'
 import SearchButtonOption from './SearchButtonOption'
+import DashboardSearchTypes from '../DashboardSearchTypes'
 export default function SearchComponent() {
   const { handleSearch } = useContext(DashboardContext)
 
@@ -30,7 +31,10 @@ export default function SearchComponent() {
   ]
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col relative">
+      <div className="flex items-center justify-center mb-8 xl:absolute xl:top-[-50px] xl:inset-x-0 max-w-max mx-auto">
+        <DashboardSearchTypes />
+      </div>
       <div className="searchBoxShadow relative mx-auto mb-6 flex w-full max-w-[850px] items-center  gap-0 rounded-[40px] border border-gray-200 bg-white">
         <div
           onClick={() => handleSearch()}
