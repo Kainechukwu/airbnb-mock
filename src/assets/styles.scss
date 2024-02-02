@@ -136,6 +136,7 @@
 }
 
 .rmdp-arrow {
+  border-color: #222222 !important;
   border: solid #222222;
   border-width: 0 2px 2px 0;
   display: inline-block;
@@ -143,6 +144,14 @@
   margin-top: 5px;
   padding: 2px;
   width: 6px;
+}
+// .rmdp-right i {
+//   margin-right: 3px;
+//   transform: rotate(-45deg) !important;
+//   -webkit-transform: rotate(-45deg) !important;
+// }
+.rmdp-right {
+  color: #222222 !important;
 }
 
 .rmdp-day-picker {
