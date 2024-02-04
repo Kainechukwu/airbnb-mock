@@ -52,11 +52,22 @@ const defaultContext = createContext<IDashboardContext>({
 
 export const DashboardContext = defaultContext
 
+export interface IFilterContext {
+  // typeOfPlace: string
+  // error: string | null
+  filterState: any
+  dispatchFilter: any
+}
+
+export const FilterContext = createContext<IFilterContext>({
+  filterState: null,
+  dispatchFilter: null
+})
+
 // export function useOverviewContext() {
 //   const overviewState = useContext(OverviewContext)
 //   if (overviewState === undefined) {
-//     throw new Error('useOverviewContext must be used with a dashbord context')
-//   }
-
+//     throw new Error('us:eOverviewContext must be used with a dashbord context')
+//   }d
 //   return overviewState
 // }
