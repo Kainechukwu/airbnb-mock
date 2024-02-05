@@ -37,7 +37,7 @@ export default function BedsAndBathrooms() {
   }, [dispatchFilter, beds])
 
   const handleSelected = (selected, type) => {
-    console.log(JSON.stringify(selected))
+    // console.log(JSON.stringify(selected))
     console.log('filterState: ', filterState)
     if (type == 'bathrooms') {
       setBathrooms(selected)
