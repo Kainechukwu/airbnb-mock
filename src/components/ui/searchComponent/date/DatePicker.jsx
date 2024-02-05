@@ -1,6 +1,8 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Calendar } from 'react-multi-date-picker'
 import { FaPlusMinus } from 'react-icons/fa6'
+// import { getDateString, parseDateString } from 'react-multi-date-picker'
+
 function Buttons({ label, active }) {
   return (
     <div
@@ -20,15 +22,38 @@ function Buttons({ label, active }) {
   )
 }
 
+// type dateType = {
+//   from: DateObject | null
+//   to: DateObject | null
+// }
+
 export default function DatePicker() {
   const dayTypes = ['Exact days', '1 day', '2 days', '3 days', '7 days']
   const [dayType, setDayType] = useState('Exact days')
 
+  const [dateRange, setDateRange] = useState([])
+
+  useEffect(() => {
+    console.log('🚀 ~ useEffect ~ dateRange:', dateRange)
+  }, [dateRange])
+
+  const handleDateChange = (event) => {
+    setDateRange(event)
+  }
+
   return (
     <div className="mt-4">
-      {' '}
-      <Calendar numberOfMonths={2} disableMonthPicker disableYearPicker>
-        <div className="flex gap-4 mt-3">
+      <Calendar
+        value={dateRange}
+        onChange={handleDateChange}
+        format="MM/DD/YYYY"
+        range
+        // onlyShowInRangeDates={true}
+        numberOfMonths={2}
+        disableMonthPicker
+        disableYearPicker
+      >
+        <div className="mt-3 flex gap-4">
           {dayTypes.map((item) => (
             <div onClick={() => setDayType(item)} key={item} className="">
               <Buttons

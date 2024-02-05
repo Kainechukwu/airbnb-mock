@@ -202,7 +202,64 @@
   color: #222222 !important;
 }
 
-.rmdp-day.rmdp-today span {
+// .rmdp-day.rmdp-today span {
+//   background-color: transparent !important;
+//   color: #222222 !important;
+
+// }
+
+// .rmdp-day.rmdp-today.rmdp-selected span:not(.highlight) {
+//   background-color: #222222 !important;
+//   box-shadow: 0 0 3px #8798ad;
+//   color: #fff;
+// }
+
+// .rmdp-range.start:not(.force) {
+//   border-radius: 52% !important;
+//   background-color: #222222 !important;
+//   box-shadow: 0 0 3px #8798ad;
+//   color: #fff !important;
+// }
+
+// .rmdp-range.end:not(.force) {
+//   border-radius: 52% !important;
+//   background-color: #222222 !important;
+//   box-shadow: 0 0 3px #8798ad;
+//   color: #fff !important;
+// }
+
+// .rmdp-range.start {
+//   background-color: #222222 !important;
+//   box-shadow: 0 0 3px #8798ad;
+//   color: #fff !important;
+// }
+// .rmdp-range.end {
+//   background-color: #222222 !important;
+//   box-shadow: 0 0 3px #8798ad;
+//   color: #fff !important;
+// }
+
+.rmdp-range {
+  // background-color: transparent !important;
+  border-radius: 52% !important;
   background-color: transparent !important;
-  color: #222222 !important;
+  box-shadow: none !important;
+  color: #000000 !important;
+}
+
+.rmdp-range span:first-of-type {
+  /* Your styles here */
+  border-radius: 52% !important;
+  background-color: #222222 !important;
+  box-shadow: 0 0 3px #8798ad;
+  color: #fff !important;
+}
+
+/* Selects the last element with the specified class */
+.rmdp-range span:last-of-type {
+  /* Your styles here */
+  border-radius: 52% !important;
+  background-color: #222222 !important;
+  box-shadow: 0 0 3px #8798ad;
+  color: #fff !important;
 }

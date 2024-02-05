@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import DatePicker from './date/DatePicker'
+import DatePicker from './date/DatePicker.jsx'
 import MonthsPicker from './date/MonthsPicker'
 import FlexibleDate from './date/FlexibleDate'
 export default function Check() {
