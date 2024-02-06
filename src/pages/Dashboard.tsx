@@ -26,17 +26,22 @@ export default function Dashboard() {
   const tag = searchParams.get('tag')
 
   const [who, setWho] = useState({ adult: 0, children: 0, infant: 0, pet: 0 })
-
+  const [checkingDates, setCheckingDates] = useState({
+    from: null,
+    to: null
+  })
   const handleSearch = useCallback(() => {
     const string = `/?tag=${tag}&${constructUrlParams({
       ...who,
-      where: whereValue
+      where: whereValue,
+      from: checkingDates.from,
+      to: checkingDates.to
     })}`
     console.log(string)
 
     // navigate(string)
     setSearch(string)
-  }, [tag, who, whereValue])
+  }, [tag, who, whereValue, checkingDates])
 
   useEffect(() => {
     navigate(search)
@@ -71,7 +76,9 @@ export default function Dashboard() {
       isShowingBigSearch,
       setIsShowingBigSearch,
       activeButton,
-      setActiveButton
+      setActiveButton,
+      checkingDates,
+      setCheckingDates
     }),
     [
       searchType,
@@ -88,7 +95,9 @@ export default function Dashboard() {
       isShowingBigSearch,
       setIsShowingBigSearch,
       activeButton,
-      setActiveButton
+      setActiveButton,
+      checkingDates,
+      setCheckingDates
     ]
   )
   const handleHeaderIntersection = (entries) => {

@@ -29,6 +29,8 @@ interface IDashboardContext {
   setIsShowingBigSearch: (e) => void
   activeButton: string
   setActiveButton: (e) => void
+  checkingDates: any
+  setCheckingDates: (e) => void
 }
 
 const defaultContext = createContext<IDashboardContext>({
@@ -47,7 +49,9 @@ const defaultContext = createContext<IDashboardContext>({
   isShowingBigSearch: false,
   setIsShowingBigSearch: () => {},
   activeButton: '',
-  setActiveButton: () => {}
+  setActiveButton: () => {},
+  checkingDates: null,
+  setCheckingDates: () => {}
 })
 
 export const DashboardContext = defaultContext

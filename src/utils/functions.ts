@@ -6,6 +6,8 @@ interface TravelParams {
   checkIn?: string
   checkOut?: string
   where?: string
+  from: string | null
+  to: string | null
 }
 
 export function constructUrlParams(obj: TravelParams): string {
