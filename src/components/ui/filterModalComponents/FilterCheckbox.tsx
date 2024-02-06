@@ -7,7 +7,7 @@ export default function FilterCheckbox({
 }: {
   label?: string
   checked?: boolean | (() => boolean)
-  onChange: () => void
+  onChange?: () => void
 }) {
   const [isChecked, setIsChecked] = useState(checked)
 
