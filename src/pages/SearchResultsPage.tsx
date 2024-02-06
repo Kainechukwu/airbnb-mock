@@ -9,6 +9,12 @@ export default function SearchResults() {
   const [searchParams] = useSearchParams()
   const tag = searchParams.get('tag')
   const where = searchParams.get('where')
+  const adult = searchParams.get('adult')
+  const children = searchParams.get('children')
+  const infant = searchParams.get('infant')
+  const pet = searchParams.get('pet')
+  const from = searchParams.get('from')
+  const to = searchParams.get('to')
 
   const shuffle = useCallback((array) => {
     array.sort(() => Math.random() - 0.5)
@@ -29,7 +35,19 @@ export default function SearchResults() {
 
   useEffect(() => {
     simpulateLoading()
-  }, [tag, shuffle, results, where, simpulateLoading])
+  }, [
+    tag,
+    shuffle,
+    results,
+    where,
+    adult,
+    children,
+    infant,
+    pet,
+    from,
+    to,
+    simpulateLoading
+  ])
   return (
     // eslint-disable-next-line tailwindcss/no-custom-classname
     <div className={`bodyHeight  px-6 md:px-16 `}>
