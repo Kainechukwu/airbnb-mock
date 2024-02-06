@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-// import FilterLinks from './FilterLinks'
+import FilterLinks from './FilterLinks'
 import { LuSettings2 } from 'react-icons/lu'
 import Switch from './Switch'
 import FilterSlider from './FilterSlider'
@@ -13,8 +13,10 @@ export default function Filter() {
   return (
     <div className="mx-auto w-full max-w-[1700px] px-6 md:px-16 ">
       <div className=" flex items-center justify-between">
-        <div className="mr-6 flex flex-1 overflow-x-auto">
-          {/* <FilterLinks /> */}
+        <div className="mr-6 flex flex-1 overflow-x-auto 2xl:hidden">
+          <FilterLinks />
+        </div>
+        <div className="mr-6 hidden overflow-x-auto 2xl:flex 2xl:flex-1">
           <FilterSlider />
         </div>
 
