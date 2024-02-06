@@ -7,6 +7,7 @@ export function closeButton(setIsOpen) {
 }
 export default function SearchButtonOption({ item, children }) {
   const {
+    checkingDates,
     setWho,
     who,
     whereValue,
@@ -52,7 +53,7 @@ export default function SearchButtonOption({ item, children }) {
       position = 'bottom-[-568px] right-[-424px]'
     }
     if (itemName.toLowerCase().includes('check out')) {
-      position = 'bottom-[-568px] right-[-271px]'
+      position = 'bottom-[-568px] right-[-270px]'
     }
 
     return position
@@ -77,6 +78,7 @@ export default function SearchButtonOption({ item, children }) {
         <span onClick={() => setIsOpen(true)}>
           {' '}
           <div
+            id={`${item.id}`}
             className={`${
               !item.title.toLowerCase().includes('check')
                 ? 'w-[270px] flex-1'
@@ -100,10 +102,22 @@ export default function SearchButtonOption({ item, children }) {
                   {item.title}
                 </span>
 
-                {item.title.toLowerCase() !== 'who' &&
-                  item.title.toLowerCase() !== 'where' && (
-                    <span className="text-xs text-[#727272]"> {item.desc}</span>
-                  )}
+                {item.title.toLowerCase() == 'check in' && (
+                  <span className="text-xs text-[#727272]">
+                    {' '}
+                    {checkingDates.from
+                      ? checkingDates.from.format('MMM DD')
+                      : item.desc}
+                  </span>
+                )}
+                {item.title.toLowerCase() == 'check out' && (
+                  <span className="text-xs text-[#727272]">
+                    {' '}
+                    {checkingDates.to
+                      ? checkingDates.to.format('MMM DD')
+                      : item.desc}
+                  </span>
+                )}
                 {item.title.toLowerCase() == 'who' && (
                   <div className="flex items-center gap-4">
                     <span

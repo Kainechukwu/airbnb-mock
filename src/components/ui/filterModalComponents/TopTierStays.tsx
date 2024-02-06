@@ -1,8 +1,23 @@
-import React, { useState } from 'react'
+import React, { useState, useContext, useCallback, useEffect } from 'react'
 import SelectorButton from './SelectorButton'
 import { PiFlowerLotus } from 'react-icons/pi'
+import { FilterContext } from '../../../utils'
+
 export default function TopTierStays() {
-  const [topTier, setTopTier] = useState(false)
+  const { filterState, dispatchFilter } = useContext(FilterContext)
+
+  const [topTier, setTopTier] = useState(filterState.topTierStays)
+
+  const dispatchTopTierStays = useCallback(() => {
+    dispatchFilter({ type: 'topTierStays', payload: topTier })
+  }, [dispatchFilter, topTier])
+
+  useEffect(() => {
+    dispatchTopTierStays()
+  }, [dispatchTopTierStays])
+
+  useEffect(() => {}, [filterState])
+
   return (
     <div onClick={() => setTopTier(!topTier)} className="max-w-max">
       <SelectorButton active={topTier}>

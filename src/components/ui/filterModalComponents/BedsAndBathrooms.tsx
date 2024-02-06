@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState, useContext, useCallback, useEffect } from 'react'
+import { FilterContext } from '../../../utils'
 
 function ButtonList({ header, children }) {
   return (
@@ -25,12 +26,46 @@ export default function BedsAndBathrooms() {
   const buttonOptions = ['Any', '1', '2', '3', '4', '5', '6', '7', '8+']
   const [beds, setBeds] = useState('Any')
   const [bathrooms, setBathrooms] = useState('Any')
+  const { filterState, dispatchFilter } = useContext(FilterContext)
+
+  const dispatchBathrooms = useCallback(() => {
+    dispatchFilter({ type: 'bathrooms', payload: bathrooms })
+  }, [dispatchFilter, bathrooms])
+
+  const dispatchBeds = useCallback(() => {
+    dispatchFilter({ type: 'beds', payload: beds })
+  }, [dispatchFilter, beds])
+
+  const handleSelected = (selected, type) => {
+    // console.log(JSON.stringify(selected))
+    console.log('filterState: ', filterState)
+    if (type == 'bathrooms') {
+      setBathrooms(selected)
+      dispatchBathrooms()
+      return
+    }
+    if (type == 'beds') {
+      setBeds(selected)
+      dispatchBeds()
+      return
+    }
+  }
+
+  useEffect(() => {
+    dispatchBathrooms()
+    dispatchBeds()
+  }, [dispatchFilter, dispatchBeds, dispatchBathrooms])
 
   return (
     <div className="flex flex-col gap-6">
+      {/* {`filterState - ${JSON.stringify(filterState)}`} */}
       <ButtonList header="Beds">
         {buttonOptions.map((item) => (
-          <div onClick={() => setBeds(item)} key={item} className="">
+          <div
+            onClick={() => handleSelected(item, 'beds')}
+            key={item}
+            className=""
+          >
             <Button
               label={item}
               active={beds.toLowerCase() == item.toLowerCase()}
@@ -40,7 +75,11 @@ export default function BedsAndBathrooms() {
       </ButtonList>
       <ButtonList header="Bathrooms">
         {buttonOptions.map((item) => (
-          <div onClick={() => setBathrooms(item)} key={item} className="">
+          <div
+            onClick={() => handleSelected(item, 'bathrooms')}
+            key={item}
+            className=""
+          >
             <Button
               label={item}
               active={bathrooms.toLowerCase() == item.toLowerCase()}

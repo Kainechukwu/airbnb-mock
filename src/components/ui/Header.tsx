@@ -19,10 +19,12 @@ export default function Header() {
         </div>
 
         <div className="flex items-center gap-[24px]">
-          <span className="text-[#222222]">Airbnb your home</span>
+          <span className="hidden text-[#222222] sm:block">
+            Airbnb your home
+          </span>
           <span
             onClick={() => setModalOpen(true)}
-            className=" cursor-pointer rounded-full p-2 text-[18px] hover:bg-[#F7F7F7]"
+            className="hidden cursor-pointer rounded-full p-2 text-[18px] hover:bg-[#F7F7F7] sm:block"
           >
             {' '}
             <TbWorld />

@@ -1,10 +1,15 @@
-import React, { useState } from 'react'
+import React, { useState, useContext, useCallback, useEffect } from 'react'
 import SelectorButton from './SelectorButton'
 import { PiHouseLine } from 'react-icons/pi'
 import { HiOutlineBuildingOffice } from 'react-icons/hi2'
 import { PiWarehouse } from 'react-icons/pi'
+import { FilterContext } from '../../../utils'
 
 export default function PropertyType() {
+  const { filterState, dispatchFilter } = useContext(FilterContext)
+  const [propertyTypes, setPropertyTypes] = useState<any[]>(
+    filterState.propertyType
+  )
   const types = [
     {
       name: 'House',
@@ -20,7 +25,10 @@ export default function PropertyType() {
     }
   ]
 
-  const [propertyTypes, setPropertyTypes] = useState<any[]>([])
+  const dispatchPropertyTypes = useCallback(() => {
+    dispatchFilter({ type: 'propertyType', payload: propertyTypes })
+  }, [propertyTypes, dispatchFilter])
+
   const handlePropertyTypes = (type) => {
     // console.log(type)
     const optionExists = propertyTypes.some(
@@ -40,6 +48,10 @@ export default function PropertyType() {
       return
     }
   }
+
+  useEffect(() => {
+    dispatchPropertyTypes()
+  }, [dispatchPropertyTypes])
 
   return (
     <div className="flex gap-4">

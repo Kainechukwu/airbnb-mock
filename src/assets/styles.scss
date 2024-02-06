@@ -136,6 +136,7 @@
 }
 
 .rmdp-arrow {
+  border-color: #222222 !important;
   border: solid #222222;
   border-width: 0 2px 2px 0;
   display: inline-block;
@@ -143,6 +144,14 @@
   margin-top: 5px;
   padding: 2px;
   width: 6px;
+}
+// .rmdp-right i {
+//   margin-right: 3px;
+//   transform: rotate(-45deg) !important;
+//   -webkit-transform: rotate(-45deg) !important;
+// }
+.rmdp-right {
+  color: #222222 !important;
 }
 
 .rmdp-day-picker {
@@ -194,6 +203,63 @@
 }
 
 .rmdp-day.rmdp-today span {
-  background-color: transparent !important;
+  // background-color: transparent !important;
   color: #222222 !important;
+  color: #fff !important;
 }
+
+// .rmdp-day.rmdp-today.rmdp-selected span:not(.highlight) {
+//   background-color: #222222 !important;
+//   box-shadow: 0 0 3px #8798ad;
+//   color: #fff;
+// }
+
+.rmdp-range.start:not(.force) {
+  border-radius: 52% !important;
+  background-color: #222222 !important;
+  box-shadow: 0 0 3px #8798ad;
+  color: #fff !important;
+}
+
+.rmdp-range.end:not(.force) {
+  border-radius: 52% !important;
+  background-color: #222222 !important;
+  box-shadow: 0 0 3px #8798ad;
+  color: #fff !important;
+}
+
+// .rmdp-range.start {
+//   background-color: #222222 !important;
+//   box-shadow: 0 0 3px #8798ad;
+//   color: #fff !important;
+// }
+// .rmdp-range.end {
+//   background-color: #222222 !important;
+//   box-shadow: 0 0 3px #8798ad;
+//   color: #fff !important;
+// }
+
+.rmdp-range {
+  // background-color: transparent !important;
+  border-radius: 52% !important;
+  background-color: #eeeeee !important;
+  box-shadow: none !important;
+  color: #000000 !important;
+}
+
+// .rmdp-range span:first-of-type {
+//   /* Your styles here */
+//   border-radius: 52% !important;
+//   background-color: #222222 !important;
+//   box-shadow: 0 0 3px #8798ad;
+//   color: #fff !important;
+// }
+
+// /* Selects the last element with the specified class */
+// .rmdp-range span:last-of-type {
+//   /* Your styles here */
+//   border-radius: 52% !important;
+//   background-color: #222222 !important;
+//   box-shadow: 0 0 3px #8798ad;
+//   color: #fff !important;
+// }

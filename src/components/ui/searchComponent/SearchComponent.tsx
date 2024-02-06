@@ -17,19 +17,23 @@ export default function SearchComponent() {
   const searchFilters = [
     {
       title: 'Where',
-      desc: 'Search destinations'
+      desc: 'Search destinations',
+      id: 'whereButton'
     },
     {
       title: 'Check in',
-      desc: 'Add dates'
+      desc: 'Add dates',
+      id: 'checkInButton'
     },
     {
       title: 'Check out',
-      desc: 'Add dates'
+      desc: 'Add dates',
+      id: 'checkOutButton'
     },
     {
       title: 'Who',
-      desc: 'Add guests'
+      desc: 'Add guests',
+      id: 'whoButton'
     }
   ]
 
