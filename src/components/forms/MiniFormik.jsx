@@ -1,6 +1,6 @@
 import React from 'react'
 
-class MiniFormink extends React.Component {
+class MiniFormik extends React.Component {
   state = {
     values: this.props.initialValues || {},
     touched: {},
@@ -29,8 +29,10 @@ class MiniFormink extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    console.log('submitted')
-    // this.props.onSubmit(this.state.values)
+    //validate
+    //submission if no errors
+
+    this.props.onSubmit(this.state.values)
   }
   render() {
     return this.props.children({
@@ -44,11 +46,12 @@ class MiniFormink extends React.Component {
 class Reservation extends React.Component {
   render() {
     return (
-      <MiniFormink
+      <MiniFormik
         initialValues={{
           isGoing: true,
           numberOfGuests: 2
         }}
+        onSubmit={(values) => alert(JSON.stringify(values, null, 2))}
       >
         {(props) => {
           const {
@@ -97,7 +100,7 @@ class Reservation extends React.Component {
             </form>
           )
         }}
-      </MiniFormink>
+      </MiniFormik>
     )
   }
 }
