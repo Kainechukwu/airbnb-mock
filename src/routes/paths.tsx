@@ -4,7 +4,8 @@ const paths = {
   CONTACTS: '/contacts',
   DOCUMENTS: '/documents',
   REPORTS: '/reports',
-  PROFILE: 'profile'
+  PROFILE: 'profile',
+  FORMINK: '/formink'
 }
 
 export default paths
